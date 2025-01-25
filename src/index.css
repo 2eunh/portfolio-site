@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* 브라우저 기본 스크롤 제거 */
+  height: 100%; /* 부모 요소 크기 */
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.disable-scroll {
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+@font-face {
+  font-family: 'Exo2';
+  src: url(./fonts/Exo2-Medium.ttf);
+}
+@font-face {
+  font-family: 'noto sans';
+  src: url(./fonts/NotoSansKR-Regular.ttf);
+}
+@font-face {
+  font-family: 'dohyeon';
+  src: url(./fonts/DoHyeon-Regular.ttf);
+}
+@font-face {
+  font-family: 'montserrat';
+  src: url(./fonts/Montserrat-Medium.ttf);
+}
