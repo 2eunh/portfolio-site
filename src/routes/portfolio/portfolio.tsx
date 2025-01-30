@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import {
   Card,
   cardGroupVariants,
-  cardVariants,
   Container,
   LeftSlideButton,
   RightSlideButton,
@@ -42,7 +41,7 @@ export default function Portfolio({
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.3 }
     );
 
     if (ref.current) {
@@ -63,7 +62,7 @@ export default function Portfolio({
       toggleLeaving();
       setIndex((prev) => {
         const totalSlides = Math.ceil(portfolios.length / offset);
-        return prev === totalSlides - 1 ? 0 : prev + 1; // 마지막에서 처음으로 루프
+        return prev === totalSlides - 1 ? 0 : prev + 1;
       });
     }
   };
@@ -73,7 +72,7 @@ export default function Portfolio({
       toggleLeaving();
       setIndex((prev) => {
         const totalSlides = Math.ceil(portfolios.length / offset);
-        return prev === 0 ? totalSlides - 1 : prev - 1; // 처음에서 마지막으로 루프
+        return prev === 0 ? totalSlides - 1 : prev - 1;
       });
     }
   };

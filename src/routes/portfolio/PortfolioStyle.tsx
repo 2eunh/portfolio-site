@@ -63,19 +63,20 @@ export const Card = styled(motion.div)`
     float: left;
     text-align: left;
     padding: 0 35px;
+    font-family : 'noto sans';
     .sub-title {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 500;
       display: block;
     }
     .skill {
       font-size: 13px;
-      font-weight: 500;
+      font-weight: 600;
       display: block;
       color: #440f73c2;
     }
     .disc {
-      font-size: 15px;
+      font-size: 13px;
       font-weight: 400;
       display: block;
     }
@@ -132,23 +133,6 @@ export const rowVariants = {
   },
 };
 
-
-// export const rowVariants = {
-//   hidden: (slideDir: number) => ({
-//     x:"0%", 
-//     opacity: 0,
-//   }),
-//   visible: { 
-//     x: 0, 
-//     opacity: 1, 
-//     transition: { duration: 0.5, ease: "easeInOut" }
-//   },
-//   exit: (slideDir: number) => ({ 
-//     x:  "0%",
-//     opacity: 0,
-//     transition: { duration: 0.5, ease: "easeInOut" }
-//   }),
-// };
 
 export const cardVariants = {
   normal: {
