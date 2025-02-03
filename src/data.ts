@@ -149,12 +149,12 @@ export const skills1 = [
   {
     name: "React",
     img: "./img/skill/React.svg",
-    percentage: "70%",
+    percentage: "60%",
   },
   {
     name: "Angular",
     img: "./img/skill/Angular-Light.svg",
-    percentage: "70%",
+    percentage: "60%",
   },
   {
     name: "JavaScript",
@@ -169,13 +169,13 @@ export const skills1 = [
 ];
 export const skills2 = [
   {
-    name: "CSS",
-    img: "./img/skill/CSS.svg",
-    percentage: "70%",
+    name: "JAVA",
+    img: "./img/skill/Java-Dark.svg",
+    percentage: "30%",
   },
   {
-    name: "Sass",
-    img: "./img/skill/Sass.svg",
+    name: "CSS",
+    img: "./img/skill/CSS.svg",
     percentage: "70%",
   },
   {

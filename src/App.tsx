@@ -9,77 +9,85 @@ import About from './routes/about/About.tsx';
 
 function App() {
   const outerDivRef = useRef<HTMLDivElement | null>(null);
+  const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const setSectionRef = (el: HTMLDivElement | null, index: number) => {
+    if (el) sectionRefs.current[index] = el;
+  };
 
   useEffect(() => {
-    const wheelHandler = (e: WheelEvent) => {
-      e.preventDefault();
-      if (!outerDivRef.current || isModalOpen ) return;
+    const handleScroll = () => {
+      if (!outerDivRef.current) return;
+
+      const scrollTop = outerDivRef.current.scrollTop;
+      const pageHeight = window.innerHeight;
       
-  
+      // 현재 보고 있는 섹션 인덱스 계산
+      const currentIndex = Math.round(scrollTop / pageHeight);
+      setActiveIndex(currentIndex);
+    };
+
+    const handleWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      if (!outerDivRef.current || isModalOpen) return;
+
       const { deltaY } = e;
       const { scrollTop } = outerDivRef.current;
-      const pageHeight = window.innerHeight; // 한 페이지 높이
-  
-      // 현재 페이지 계산
-      const currentPage = Math.round(scrollTop / (pageHeight ));
-  
-      if (deltaY > 0) {
-        // 아래로 스크롤
-        if (currentPage < 4) {
-          const nextPageTop = (currentPage + 1) * (pageHeight );
-          outerDivRef.current.scrollTo({
-            top: nextPageTop,
-            left: 0,
-            behavior: "smooth",
-          });
-        }
-      } else if (deltaY < 0) {
-        // 위로 스크롤
-        if (currentPage > 0) {
-          const prevPageTop = (currentPage - 1) * (pageHeight );
-          outerDivRef.current.scrollTo({
-            top: prevPageTop,
-            left: 0,
-            behavior: "smooth",
-          });
-        }
+      const pageHeight = window.innerHeight;
+
+      const currentPage = Math.round(scrollTop / pageHeight);
+
+      if (deltaY > 0 && currentPage < sectionRefs.current.length - 1) {
+        scrollToSection(currentPage + 1);
+      } else if (deltaY < 0 && currentPage > 0) {
+        scrollToSection(currentPage - 1);
       }
     };
-  
+
     const outerDivRefCurrent = outerDivRef.current;
     if (outerDivRefCurrent) {
-      outerDivRefCurrent.addEventListener("wheel", wheelHandler);
+      outerDivRefCurrent.addEventListener("scroll", handleScroll);
+      outerDivRefCurrent.addEventListener("wheel", handleWheel);
     }
+
     return () => {
       if (outerDivRefCurrent) {
-        outerDivRefCurrent.removeEventListener("wheel", wheelHandler);
+        outerDivRefCurrent.removeEventListener("scroll", handleScroll);
+        outerDivRefCurrent.removeEventListener("wheel", handleWheel);
       }
     };
   }, [isModalOpen]);
-  
-  
+
+  const scrollToSection = (index: number) => {
+    if (outerDivRef.current && sectionRefs.current[index]) {
+      const offsetTop = sectionRefs.current[index]!.offsetTop;
+      outerDivRef.current.scrollTo({ top: offsetTop, behavior: "smooth" });
+      setActiveIndex(index); // 메뉴 활성화 업데이트
+    }
+  };
+
   return (
     <AppContainer>
-      <Header />
+      <Header scrollToSection={scrollToSection} activeIndex={activeIndex} />
       <Outer ref={outerDivRef} id="outer-div">
-        <Inner>
+        <Inner ref={(el) => setSectionRef(el, 0)}>
           <Intro />
         </Inner>
-        <Inner>
+        <Inner ref={(el) => setSectionRef(el, 1)}>
           <About />
         </Inner>
-        <Inner>
+        <Inner ref={(el) => setSectionRef(el, 2)}>
           <Portfolio setIsModalOpen={setIsModalOpen} />
         </Inner>
-        <Inner>
+        <Inner ref={(el) => setSectionRef(el, 3)}>
           <Skill />
         </Inner>
       </Outer>
     </AppContainer>
   );
 }
-
 export default App;
 
 const AppContainer = styled.div`

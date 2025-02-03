@@ -1,5 +1,6 @@
 import { color, motion } from "framer-motion";
 import styled from "styled-components";
+import media from "../../MediaQuery.tsx";
 
 export const Container = styled.div`
   min-height: 100vh; 
@@ -12,6 +13,15 @@ export const Title = styled.h1`
   font-size: 70px;
   font-family: 'montserrat';
   margin-bottom: 450px;
+  ${media.medium`
+    font-size: 60px;
+  `};
+  ${media.small`
+    font-size: 50px;
+  `};
+  ${media.xsmall`
+    font-size: 40px;
+  `};
 `;
 
 export const SlideCardGroup = styled(motion.div)`
@@ -21,6 +31,17 @@ export const SlideCardGroup = styled(motion.div)`
   align-items: center;
   width: 90%;
   margin: 0 auto;
+  ${media.medium`
+    width: 100%;
+    margin-top : -35px;
+  `};
+  ${media.small`
+    width: 100%;
+    margin-top : -35px;
+  `};
+  ${media.xsmall`
+    margin-top : -75px;
+  `};
 `;
 
 export const Row = styled(motion.div)`
@@ -30,6 +51,13 @@ export const Row = styled(motion.div)`
   position: absolute;
   width: 90%;
   margin: 10px 10px ;
+  ${media.medium`
+    grid-template-columns: repeat(2, 1fr);
+  `};
+  ${media.small`
+    display: flex;
+    justify-content: center;
+  `};
 `;
 
 export const Card = styled(motion.div)`
@@ -37,6 +65,16 @@ export const Card = styled(motion.div)`
   height: 550px;
   background-color: #eeecec87;
   border-radius: 15px;
+
+  ${media.small`
+    min-width: 350px;
+    height: 520px;
+  `};
+  ${media.xsmall`
+    min-width: 340px;
+    height: 480px;
+  `};
+
   & {
   transition: background-color 0.3s ease-in-out;
   }
@@ -51,12 +89,32 @@ export const Card = styled(motion.div)`
     font-weight: 600;
     display: block;
     margin: 20px 0;
+    ${media.small`
+      font-size: 30px;
+      margin: 15px 0;
+    `};
+    ${media.xsmall`
+      font-size: 25px;
+      margin: 10px 0;
+    `};
   }
   .img {
     width: 400px;
     height: 230px;
     border-radius: 10px;
     margin: 5px 0 15px;
+    ${media.medium`
+      width: 380px;
+      height: 210px;
+    `};
+    ${media.small`
+      width: 320px;
+      height: 180px;
+    `};
+    ${media.xsmall`
+      width: 300px;
+      height: 160px;
+    `};
   }
   .discription {
     line-height: 30px;
@@ -68,6 +126,12 @@ export const Card = styled(motion.div)`
       font-size: 18px;
       font-weight: 500;
       display: block;
+      ${media.small`
+        font-size: 16px;
+      `};
+      ${media.xsmall`
+        font-size: 15px;
+      `};
     }
     .skill {
       font-size: 13px;
@@ -79,6 +143,9 @@ export const Card = styled(motion.div)`
       font-size: 13px;
       font-weight: 400;
       display: block;
+      ${media.xsmall`
+        font-size: 12px;
+      `};
     }
   }
 `;

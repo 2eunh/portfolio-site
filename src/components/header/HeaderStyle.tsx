@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
+import media from "../../MediaQuery.tsx";
 
 export const HeaderContainer = styled.div`
   width: 100%;
   height: 100px;
   position: fixed;
   z-index: 1;
-  
+
 `;
 
 export const Nav = styled.nav`
@@ -29,15 +30,19 @@ export const HeaderItem = styled.li`
   margin: 0 50px;
   font-size: 20px;
   font-family: 'Exo2';
+  ${media.medium`
+    margin: 0 40px;
+  `};
+  ${media.small`
+    margin: 0 20px;
+    font-size: 18px;
+  `};
+  ${media.xsmall`
+    margin: 0 12px;
+    font-size: 17px;
+  `};
 `;
 
-export const ActiveDot = styled.div`
-  width: 35px;
-  height: 35px;
-  background-color: #ffc0cba1;
-  border-radius: 100%;
-  position: absolute;
-`;
 
 export const Menu = styled.span`
   z-index: 1;
@@ -51,4 +56,8 @@ export const MotionDot = styled(motion.div)`
   background-color: #ffc0cba1;
   border-radius: 100%;
   position: absolute;
+  ${media.small`
+    width: 30px;
+    height: 30px;
+  `};
 `;

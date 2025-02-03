@@ -8,23 +8,30 @@ import {
   Nav,
 } from "./HeaderStyle.tsx";
 
-export default function Header() {
-  const [activeIndex, setActiveIndex] = useState(0);
+interface HeaderProps {
+  scrollToSection: (index: number) => void;
+  activeIndex: any;
+}
 
-  const menuItems = ['Intro', 'About', 'Projects', 'Skill'];
+export default function Header({ scrollToSection, activeIndex }: HeaderProps) {
+
+  const menuItems = ["Intro", "About", "Projects", "Skill"];
 
   return (
     <HeaderContainer>
       <Nav>
         <HeaderItems>
           {menuItems.map((item, index) => (
-            <HeaderItem key={index} onClick={() => setActiveIndex(index)}>
+            <HeaderItem
+              key={index}
+              onClick={() => scrollToSection(index)}
+            >
               {activeIndex === index && (
                 <MotionDot
                   layoutId="active-dot"
                   initial={false}
                   transition={{
-                    type: 'spring',
+                    type: "spring",
                     stiffness: 500,
                     damping: 30,
                   }}

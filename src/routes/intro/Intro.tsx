@@ -23,7 +23,7 @@ export default function Intro() {
           <span>프론트엔드 개발자 이은혜입니다.</span>
         </TextGroup>
         <ScrollIcon>
-          <img src="./img/icon_scroll.png" alt="" />
+          <img src="./img/icon_scroll.png" alt="scroll-icon" />
         </ScrollIcon>
       </Container>
       <Sources href="https://www.flaticon.com/kr/free-icons/" title="개발자 이미지">이미지 제작자: Flat Icons - Flaticon</Sources>

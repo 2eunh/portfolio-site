@@ -25,10 +25,29 @@ export default function Portfolio({
   const [leaving, setLeaving] = useState(false);
   const [index, setIndex] = useState(0);
   const [selectedItem, setSelectedItem] = useState(null);
+  const [offset, setOffset] = useState(3);
 
-  const offset = 3;
 
   const toggleLeaving = () => setLeaving((prev) => !prev);
+
+  useEffect(() => {
+    const updateOffset = () => {
+      if (window.innerWidth <= 768) {
+        setOffset(1); // small일 땐 1개
+      } else if (window.innerWidth <= 1024) {
+        setOffset(2); // medium일 땐 2개
+      } else {
+        setOffset(3); // 기본값 3개
+      }
+    };
+
+    updateOffset(); // 초기 설정
+    window.addEventListener("resize", updateOffset);
+
+    return () => {
+      window.removeEventListener("resize", updateOffset);
+    };
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -79,8 +98,6 @@ export default function Portfolio({
   
 
   const onCardClicked = (item: any) => {
-    console.log(item);
-
     setSelectedItem(item);
     setIsModalOpen(true);
   };
