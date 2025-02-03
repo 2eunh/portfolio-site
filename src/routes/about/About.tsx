@@ -105,7 +105,7 @@ export default function About() {
             </LinkCard>
             <LinkCard whileHover={buttonHoverAnimation} animate={{ rotate: 0 }} onClick={()=>onClickGoGithub()}>
               <img
-                src="./img/skill/GitHub-Dark.svg"
+                src="./img/skill/Github-Dark.svg"
                 alt="git-icon"
                 className="git-icon"
               />
