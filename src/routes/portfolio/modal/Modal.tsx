@@ -63,7 +63,7 @@ export default function Modal({ item, onClose }) {
             <div className="link-wrapper wrapper">
               <div className="github">
                 <img
-                  src="./img/skill/GitHub-Dark.svg"
+                  src="./img/skill/Github-Dark.svg"
                   alt="git-icon"
                   className="git-icon"
                 />
