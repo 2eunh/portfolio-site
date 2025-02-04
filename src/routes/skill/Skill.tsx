@@ -126,10 +126,16 @@ function SkillItem({ skill, onClick, isActive }) {
   const isInView = useInView(ref);
 
   return (
-    <StyledSkillItem ref={ref} onClick={onClick} isActive={isActive}>
-      <div className="flip-container">
-        <img src={skill.img} alt="skill-img" className="skill-img" />
-        <span className="skill-name">{skill.name}</span>
+    <StyledSkillItem ref={ref} onClick={onClick}>
+      <div className={`flip-container ${isActive ? "flipped" : ""}`}>
+        <div className="flipper">
+          <div className="front">
+            <img src={skill.img} alt="skill-img" className="skill-img" />
+          </div>
+          <div className="back">
+            <span className="skill-name">{skill.name}</span>
+          </div>
+        </div>
       </div>
       <div className="skill-percentage-wrapper">
         <SkillPercentage
