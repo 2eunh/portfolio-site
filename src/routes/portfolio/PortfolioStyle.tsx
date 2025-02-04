@@ -40,7 +40,7 @@ export const SlideCardGroup = styled(motion.div)`
     margin-top : -35px;
   `};
   ${media.xsmall`
-    margin-top : -75px;
+    margin-top : -90px;
   `};
 `;
 
@@ -69,10 +69,11 @@ export const Card = styled(motion.div)`
   ${media.small`
     min-width: 350px;
     height: 520px;
+    overflow-y : auto;
   `};
   ${media.xsmall`
     min-width: 340px;
-    height: 480px;
+    height: 450px;
   `};
 
   & {
@@ -108,12 +109,12 @@ export const Card = styled(motion.div)`
       height: 210px;
     `};
     ${media.small`
-      width: 320px;
-      height: 180px;
-    `};
-    ${media.xsmall`
       width: 300px;
       height: 160px;
+    `};
+    ${media.xsmall`
+      width: 280px;
+      height: 140px;
     `};
   }
   .discription {
@@ -138,6 +139,12 @@ export const Card = styled(motion.div)`
       font-weight: 600;
       display: block;
       color: #440f73c2;
+      ${media.small`
+        font-size: 12px;
+      `};
+      ${media.xsmall`
+        font-size: 11px;
+      `};
     }
     .disc {
       font-size: 13px;

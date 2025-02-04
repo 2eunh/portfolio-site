@@ -14,56 +14,69 @@ export const Container = styled.div`
 
 
 
-export const Img = styled.img`
-  width: 200px;
-  height: 200px;
-  margin-right: 50px;
+export const Img = styled.div`
+  width: 250px;
+  height: 250px;
+  margin-right: 30px;
+  margin-bottom: 20px;
+  img{
+    width: 250px;
+    height: 250px;
+    ${media.medium`
+      width: 190px;
+      height: 190px;
+    `};
+    ${media.small`
+      width: 120px;
+      height: 110px;
+    `};
+    ${media.xsmall`
+      width: 90px;
+      height: 85px;
+    `};
+  }
   ${media.medium`
-    width: 170px;
-    height: 170px;
+    width: 190px;
+    height: 190px;
   `};
   ${media.small`
-    width: 110px;
-    height: 110px;
-    margin : 0 0 20px 30px;
-    align-self: flex-start;
+    width: 90%;
+    height : 130px;
+    margin : 0 auto;
   `};
   ${media.xsmall`
-    width: 100px;
-    height: 100px;
-    margin-bottom : 20px;
-    margin-left : 10%;
-    align-self: flex-start;
+    height : 100px;
   `};
 `;
 
 export const TextGroup = styled.div`
-  font-size: 60px;
+  font-size: 4rem;
   font-family: 'dohyeon';
   ${media.medium`
-    font-size: 45px;
+    font-size: 3rem;
   `};
   ${media.small`
-    font-size: 32px;
+    font-size: 1.8rem;
+    width: 90%;
   `};
   ${media.xsmall`
-    font-size: 25px;
+    font-size: 1.5rem;
   `};
 `;
 
 export const SwingText = styled.div`
-  height: 60px;
+  height: 4rem;
   overflow: hidden; 
   position: relative;
   margin: 10px 0 15px 0;
   ${media.medium`
-    height: 45px;
+    height: 3rem;
   `};
   ${media.small`
-    height: 32px;
+    height: 1.8rem;
   `};
   ${media.xsmall`
-    height: 25px;
+    height: 1.5rem;
   `};
 
   span {
@@ -95,10 +108,10 @@ export const SwingText = styled.div`
 export const ScrollIcon = styled.div`
   position: absolute;
   bottom: 50px;
-  left: 50%;
   transform: translateX(-50%);
   animation: bounce 1s ease infinite; 
-
+  width : 100%;
+  text-align: center;
   @keyframes bounce {
     0%, 100% {
       transform: translateY(0);
@@ -107,15 +120,16 @@ export const ScrollIcon = styled.div`
       transform: translateY(-5px);
     }
   }
+  img{
+    ${media.small`
+      width : 30px;
+    `};
+    ${media.xsmall`
+      width : 22px;
+    `};
+  }
 
-  ${media.medium`
-  `};
-  ${media.small`
-    left: 45%;
-  `};
-  ${media.xsmall`
 
-  `};
 `;
 
 export const Sources = styled.a`

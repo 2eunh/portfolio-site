@@ -12,7 +12,9 @@ export default function Intro() {
   return (
     <>
       <Container>
-        <Img src="./img/free-icon-developer-4661318.png" alt="개발자 이미지"/>
+        <Img>
+          <img src="./img/free-icon-developer-4661318.png" alt="개발자 이미지"/>
+        </Img>
         <TextGroup>
           <span>안녕하세요 :)</span>
           <SwingText>
