@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   MotionDot,
   HeaderContainer,
@@ -13,12 +13,11 @@ interface HeaderProps {
   activeIndex: any;
 }
 
-export default function Header({ scrollToSection, activeIndex }: HeaderProps) {
-
+export default function Header({ scrollToSection, activeIndex}: HeaderProps) {
   const menuItems = ["Intro", "About", "Projects", "Skill"];
 
   return (
-    <HeaderContainer>
+    <HeaderContainer >
       <Nav>
         <HeaderItems>
           {menuItems.map((item, index) => (

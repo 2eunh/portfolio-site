@@ -11,6 +11,7 @@ function App() {
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isScrolled, setIsScrolled] = useState(Boolean);
 
   const setSectionRef = (el: HTMLDivElement | null, index: number) => {
     if (el) sectionRefs.current[index] = el;
@@ -49,6 +50,7 @@ function App() {
     if (outerDivRefCurrent) {
       outerDivRefCurrent.addEventListener("scroll", handleScroll);
       outerDivRefCurrent.addEventListener("wheel", handleWheel);
+      
     }
 
     return () => {
