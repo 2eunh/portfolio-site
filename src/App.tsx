@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import './App.css';
 import Header from './components/header/Header.tsx';
 import Intro from './routes/intro/Intro.tsx';
 import Portfolio from './routes/portfolio/portfolio.tsx';
