@@ -3,7 +3,7 @@ export const portfolios = [
     id: 1,
     title: "Portfolio Site",
     subTitle: "Portfolio Site (포트폴리오 사이트)",
-    img: "./img/portfolio_site_main.png",
+    img: "/img/portfolio_site_main.png",
     skill: "React, TypeScript, HTML, framer-motion, Styled-components",
     disc: "본인을 소개하고, 보유한 스킬과 프로젝트 경험을 소개하는 포트폴리오 사이트입니다.",
     detail: {
@@ -35,7 +35,7 @@ export const portfolios = [
     id: 2,
     title: "Cucucook",
     subTitle: "Cucucook (요리 레시피 플랫폼)",
-    img: "./img/cucucook-main.png",
+    img: "/img/cucucook-main.png",
     skill: "React, TypeScript, HTML, Styled-components",
     disc: "cucucook은 다양한 요리 레시피를 공유하고 소통할 수 있는 플랫폼입니다. 사용자는 자신만의 레시피를 등록하고 다른 사용자들의 레시피를 탐색할 수 있습니다. 또한, 댓글과 좋아요 기능을 통해 상호 작용할 수 있습니다.",
     detail: {
@@ -89,7 +89,7 @@ export const portfolios = [
     id: 3,
     title: "Netflix clone",
     subTitle: "mini Netflix clone (넷플릭스 메인 클론코딩)",
-    img: "./img/netflix_clone_main.png",
+    img: "/img/netflix_clone_main.png",
     skill: "React, TypeScript, HTML, Styled-components, framer-motion",
     disc: "react와 framer-motion을 공부하고 익히며 넷플릭스 첫 화면을 클론 코딩한 프로젝트입니다. ",
     detail: {
@@ -118,7 +118,7 @@ export const portfolios = [
     id: 4,
     title: "To do list",
     subTitle: "To do list (할일 목록 게시판)",
-    img: "./img/to_do_list_main.png",
+    img: "/img/to_do_list_main.png",
     skill: "React, TypeScript, HTML, Styled-components",
     disc: "트렐로 형식으로 구현한 할일 목록 게시판입니다. 드래그앤드롭을 통해 할일을 추가하거나, 옮기거나, 삭제할 수 있습니다.",
     detail: {
@@ -148,44 +148,44 @@ export const portfolios = [
 export const skills1 = [
   {
     name: "React",
-    img: "./img/skill/React.svg",
+    img: "/img/skill/React.svg",
     percentage: "60%",
   },
   {
     name: "Angular",
-    img: "./img/skill/Angular-Light.svg",
+    img: "/img/skill/Angular-Light.svg",
     percentage: "60%",
   },
   {
     name: "JavaScript",
-    img: "./img/skill/JavaScript.svg",
+    img: "/img/skill/JavaScript.svg",
     percentage: "60%",
   },
   {
     name: "TypeScript",
-    img: "./img/skill/TypeScript.svg",
+    img: "/img/skill/TypeScript.svg",
     percentage: "60%",
   },
 ];
 export const skills2 = [
   {
     name: "JAVA",
-    img: "./img/skill/Java-Dark.svg",
+    img: "/img/skill/Java-Dark.svg",
     percentage: "30%",
   },
   {
     name: "CSS",
-    img: "./img/skill/CSS.svg",
+    img: "/img/skill/CSS.svg",
     percentage: "70%",
   },
   {
     name: "HTML",
-    img: "./img/skill/HTML.svg",
+    img: "/img/skill/HTML.svg",
     percentage: "70%",
   },
   {
     name: "Figma",
-    img: "./img/skill/Figma.svg",
+    img: "/img/skill/Figma.svg",
     percentage: "50%",
   },
 ];

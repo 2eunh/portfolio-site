@@ -30,6 +30,15 @@ export default function Portfolio({
 
   const toggleLeaving = () => setLeaving((prev) => !prev);
 
+  //이미지 미리 로드
+  useEffect(() => {
+    portfolios.forEach((item) => {
+      const img = new Image();
+      img.src = item.img;
+    });
+  }, []);
+  
+
   useEffect(() => {
     const updateOffset = () => {
       if (window.innerWidth <= 768) {
@@ -146,7 +155,7 @@ export default function Portfolio({
                   onClick={() => onCardClicked(item)}
                 >
                   <span className="card-title">{item.title}</span>
-                  <img className="img" src={item.img} alt="card-img" />
+                  <img className="img" src={process.env.PUBLIC_URL + `${item.img}`} alt="card-img" loading="eager"/>
                   <div className="discription">
                     <span className="sub-title">{item.subTitle}</span>
                     <span className="skill">{item.skill}</span>

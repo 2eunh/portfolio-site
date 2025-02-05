@@ -130,7 +130,7 @@ function SkillItem({ skill, onClick, isActive }) {
       <div className={`flip-container ${isActive ? "flipped" : ""}`}>
         <div className="flipper">
           <div className="front">
-            <img src={skill.img} alt="skill-img" className="skill-img" />
+            <img src={process.env.PUBLIC_URL + `${skill.img}`} alt="skill-img" className="skill-img" />
           </div>
           <div className="back">
             <span className="skill-name">{skill.name}</span>

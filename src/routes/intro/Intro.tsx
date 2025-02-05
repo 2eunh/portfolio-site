@@ -13,7 +13,7 @@ export default function Intro() {
     <>
       <Container>
         <Img>
-          <img src="./img/free-icon-developer-4661318.png" alt="개발자 이미지"/>
+          <img src={process.env.PUBLIC_URL + '/img/free-icon-developer-4661318.png'} alt="개발자 이미지"/>
         </Img>
         <TextGroup>
           <span>안녕하세요 :)</span>
@@ -25,7 +25,7 @@ export default function Intro() {
           <span>프론트엔드 개발자 이은혜입니다.</span>
         </TextGroup>
         <ScrollIcon>
-          <img src="./img/icon_scroll.png" alt="scroll-icon" />
+          <img src={process.env.PUBLIC_URL + `/img/icon_scroll.png`}  alt="scroll-icon" />
         </ScrollIcon>
       </Container>
       <Sources href="https://www.flaticon.com/kr/free-icons/" title="개발자 이미지">이미지 제작자: Flat Icons - Flaticon</Sources>
