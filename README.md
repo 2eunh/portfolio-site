@@ -4,7 +4,7 @@
 
 
 📝프로젝트 개요
-기간 : 2025.01.20 ~ 2025.01.31. / 인원 : 1명
+기간 : 2025.01.20 ~  / 인원 : 1명
 
 개발환경 : React, TypeScript, HTML, framer-motion, Styled-components
 
