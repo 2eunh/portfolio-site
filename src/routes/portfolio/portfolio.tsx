@@ -27,18 +27,23 @@ export default function Portfolio({
   const [selectedItem, setSelectedItem] = useState(null);
   const [offset, setOffset] = useState(3);
 
-
   const toggleLeaving = () => setLeaving((prev) => !prev);
 
-  //이미지 미리 로드
   useEffect(() => {
-    portfolios.forEach((item) => {
-      const img = new Image();
-      img.src = item.img;
-    });
-  }, []);
+    const preloadImages = () => {
+      const nextItems = extendedPortfolios.slice(
+        offset * (index + 1),
+        offset * (index + 1) + offset
+      );
+      nextItems.forEach((item) => {
+        const img = new Image();
+        img.src = process.env.PUBLIC_URL + item.img;
+      });
+    };
   
-
+    preloadImages();
+  }, [index, offset]);
+  
   useEffect(() => {
     const updateOffset = () => {
       if (window.innerWidth <= 768) {
@@ -94,7 +99,7 @@ export default function Portfolio({
       });
     }
   };
-  
+
   const decreaseIndex = () => {
     if (!leaving) {
       toggleLeaving();
@@ -104,7 +109,6 @@ export default function Portfolio({
       });
     }
   };
-  
 
   const onCardClicked = (item: any) => {
     setSelectedItem(item);
@@ -130,9 +134,7 @@ export default function Portfolio({
         <RightSlideButton onClick={increaseIndex}>
           <IoIosArrowForward size="60" />
         </RightSlideButton>
-        <AnimatePresence
-          onExitComplete={toggleLeaving}
-        >
+        <AnimatePresence onExitComplete={toggleLeaving}>
           <Row
             as={motion.div}
             variants={rowVariants}
@@ -155,7 +157,12 @@ export default function Portfolio({
                   onClick={() => onCardClicked(item)}
                 >
                   <span className="card-title">{item.title}</span>
-                  <img className="img" src={process.env.PUBLIC_URL + `${item.img}`} alt="card-img" loading="eager"/>
+                  <img
+                    className="img"
+                    src={process.env.PUBLIC_URL + `${item.img}`}
+                    alt="card-img"
+                    loading="eager"
+                  />
                   <div className="discription">
                     <span className="sub-title">{item.subTitle}</span>
                     <span className="skill">{item.skill}</span>

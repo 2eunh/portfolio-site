@@ -6,7 +6,7 @@ export const HeaderContainer = styled.div`
   width: 100%;
   height: 6rem; 
   position: fixed;
-  z-index: 10;
+  z-index: 1;
   transition: background-color 0.3s ease-in-out;
 
 
